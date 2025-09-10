@@ -1,0 +1,10 @@
+[project]
+name = "weather"
+version = "0.1.0"
+description = "实现一个使用百度天气 api 查询天气的 MCP Server"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.6.0",
+]

@@ -1,6 +1,7 @@
 # encoding:utf-8
 # import requests
 import httpx
+import json
 from mcp.server.fastmcp import FastMCP
 
 # Initialize FastMCP server
@@ -26,7 +27,8 @@ async def get_forecast(district_id: str) -> str:
         try:
             response = await client.get(f"{url}?district_id={district_id}&data_type=all&ak={ak}")
             response.raise_for_status()
-            return response.json()
+            data = response.json()
+            return json.dumps(data)
         except Exception:
             return "请求失败"
         
